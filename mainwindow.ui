@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>824</width>
+    <height>467</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>801</width>
+      <height>321</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_row_col">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>101</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>824</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Файл</string>
+    </property>
+    <addaction name="Menu_Cteate"/>
+    <addaction name="Menu_Open"/>
+    <addaction name="Menu_Save"/>
+    <addaction name="Menu_Save_As"/>
+    <addaction name="separator"/>
+    <addaction name="Menu__Exit"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>Тема</string>
+    </property>
+    <addaction name="Light"/>
+    <addaction name="Dark"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+  </widget>
+  <action name="Menu_Cteate">
+   <property name="text">
+    <string>Создать</string>
+   </property>
+  </action>
+  <action name="Menu_Open">
+   <property name="text">
+    <string>Открыть</string>
+   </property>
+  </action>
+  <action name="Menu_Save">
+   <property name="text">
+    <string>Сохранить</string>
+   </property>
+  </action>
+  <action name="Menu_Save_As">
+   <property name="text">
+    <string>Сохранить как</string>
+   </property>
+  </action>
+  <action name="Menu__Exit">
+   <property name="text">
+    <string>Выход</string>
+   </property>
+  </action>
+  <action name="Light">
+   <property name="text">
+    <string>Светлая тема</string>
+   </property>
+  </action>
+  <action name="Dark">
+   <property name="text">
+    <string>Темная тема</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
