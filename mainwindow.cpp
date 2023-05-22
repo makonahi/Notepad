@@ -23,19 +23,19 @@ void MainWindow::on_Menu_Open_triggered() //меню открыть
     //QString strokaadres;
     //strokaadres = "C:/Users/student.GIS/Documents/" + fileName;
 
-    if (flag ==0 && name.contains(".txt"))
+    if (!flag && name.contains(".txt"))
     {
         open_flag();
     }
-    else if (flag ==1 && name.contains(".txt"))
+    else if (flag && name.contains(".txt"))
     {
         to_open();
     }
-    else if (flag == 0 && name.contains(".txt") ==0)
+    else if (!flag && name.contains(".txt") ==0)
     {
         open_flag();
     }
-    else if (flag == 1 && name.contains(".txt") ==0)
+    else if (flag && name.contains(".txt") ==0)
     {
         to_open();
     }
@@ -46,7 +46,7 @@ void MainWindow::on_Menu_Open_triggered() //меню открыть
 
 void MainWindow::on_Menu_Save_triggered() //меню сохранить
 {
-    if (flag ==0 && fileName.contains(".txt"))
+    if (!flag && fileName.contains(".txt"))
     {
         if (fileName.isEmpty()) //файл не выбран
         {
@@ -64,7 +64,7 @@ void MainWindow::on_Menu_Save_triggered() //меню сохранить
 
         }
     }
-    else if (flag ==0 && fileName.contains(".txt") == 0){
+    else if (!flag && fileName.contains(".txt") == 0){
         to_save();
     }
 }
@@ -99,7 +99,7 @@ void MainWindow::on_Menu_Save_As_triggered() // сохранить как
 void MainWindow::closeEvent(QCloseEvent *event)//обработчик закрытия окон
 {
 
-    if (flag == 0 && fileName.contains(".txt")==0)
+    if (!flag && fileName.contains(".txt")==0)
     {
         QString quest = "Вы хотите сохранить изменения в файле "  "\"" + fileName + "\"" +"?";
         QMessageBox::StandardButton reply = QMessageBox::question(this,"Блокнот",quest , QMessageBox::Yes|QMessageBox::No|QMessageBox::Close);
@@ -139,7 +139,7 @@ void MainWindow::closeEvent(QCloseEvent *event)//обработчик закры
             event-> ignore();// игнорируем сигнал
         }
     }
-    else if (flag == 0 && fileName.contains(".txt"))
+    else if (!flag && fileName.contains(".txt"))
     {
         QString quest = "Вы хотите сохранить изменения в файле "  "\"" + fileName + "\"" +"?";
         QMessageBox::StandardButton reply = QMessageBox::question(this,"Блокнот",quest , QMessageBox::Yes|QMessageBox::No|QMessageBox::Close);
@@ -178,7 +178,7 @@ void MainWindow::on_Menu_Cteate_triggered()// создать
     QString name = title(fileName);
     name = "*"+ title(fileName);
 
-    if (flag ==0 && name.contains(".txt"))
+    if (!flag && name.contains(".txt"))
     {
         QString quest = "Вы хотите сохранить изменения в файле "  "\"" + fileName + "\"" +"?";
         QMessageBox::StandardButton reply = QMessageBox::question(this,"Блокнот",quest , QMessageBox::Yes|QMessageBox::No|QMessageBox::Close);
@@ -205,7 +205,7 @@ void MainWindow::on_Menu_Cteate_triggered()// создать
         //                fileName = "Безымянный";
         //                QWidget::setWindowTitle(title(fileName));
     }
-    else if (flag ==1 && name.contains(".txt"))
+    else if (flag && name.contains(".txt"))
     {
         ui->textEdit->clear();
         fileName = "Безымянный";
@@ -214,13 +214,13 @@ void MainWindow::on_Menu_Cteate_triggered()// создать
         QWidget::setWindowTitle(title(fileName));
         flag = 1;
     }
-    else if (flag == 0 && name.contains(".txt") ==0)
+    else if (!flag && name.contains(".txt") ==0)
     {
         to_flag_is_0();
 
     }
 
-    else if (flag == 1 && name.contains(".txt") ==0)
+    else if (flag && name.contains(".txt") ==0)
     {
         ui->textEdit->clear();
         fileName = "Безымянный";
@@ -265,17 +265,17 @@ void MainWindow::on_textEdit_textChanged() // для звездочки
         return;
     }
     flag = 0;
-    if (flag ==0 && name.contains(".txt"))
+    if (!flag && name.contains(".txt"))
     {
         QWidget::setWindowTitle(name);
     }
-    else if (flag ==1 && name.contains(".txt"))
+    else if (flag && name.contains(".txt"))
         QWidget::setWindowTitle(title(fileName));
-    else if (flag == 0 && name.contains(".txt") ==0)
+    else if (!flag && name.contains(".txt") ==0)
         QWidget::setWindowTitle("*Безымянный - блокнот");
 
 
-    else if (flag == 1 && name.contains(".txt") ==0)
+    else if (flag && name.contains(".txt") ==0)
         QWidget::setWindowTitle("Безымянный - блокнот");
     if (name.contains(".txt") ==0 && ui->textEdit->toPlainText().size() == 0)
     {
@@ -298,7 +298,7 @@ void MainWindow::on_textEdit_textChanged() // для звездочки
     //            QWidget::setWindowTitle(title (fileName));
     //        }
 
-    //    if (flag ==0)
+    //    if (!flag)
     //    {
     //            QWidget::setWindowTitle(name);
     //    }
