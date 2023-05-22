@@ -1,0 +1,10 @@
+Find all missing libraries at C:\Qt\5.12.1\mingw73_64\bin (example)
+list of needed libraries:
+- Qt5Cored.dll
+- Qt5Guid.dll
+- Qt5Widgetsd.dll
+Put them in exe folder
+
+Or
+
+Put exe file in C:\Qt\5.12.1\mingw73_64\bin (example). In that case you don't need libraries from this folder either.
